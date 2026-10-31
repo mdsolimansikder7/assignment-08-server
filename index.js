@@ -5,7 +5,7 @@ import express from "express";
 import cors from "cors";
 
 import { connectDB } from "./db.js";
-import { notFound, errorHandler } from "./middleware.js";
+import { notFound, errorHandler } from "./verifyJwt.js";
 import eventRoutes from "./routes/events.js";
 import joinRoutes from "./routes/joins.js";
 

@@ -3,7 +3,7 @@ import { Router } from "express";
 import { ObjectId } from "mongodb";
 
 import { getEvents, getJoins } from "../db.js";
-import { verifyJWT } from "../middleware.js";
+import { verifyJWT } from "../verifyJwt.js";
 import { getToday, isValidId } from "../helpers.js";
 
 const router = Router();
