@@ -1,5 +1,3 @@
-// MongoDB connection with a cached client (important for Vercel serverless).
-// Exports connectDB(), getEvents() and getJoins().
 
 import { MongoClient } from "mongodb";
 

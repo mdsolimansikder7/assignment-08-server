@@ -49,8 +49,6 @@ router.get("/", async (req, res) => {
   });
 });
 
-// GET /api/events/mine
-// Events created by the logged-in user (Manage Events).
 router.get("/mine", verifyJWT, async (req, res) => {
   const events = await getEvents()
     .find({ creatorEmail: req.user.email })

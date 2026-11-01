@@ -40,8 +40,7 @@ export function isValidId(id) {
   return typeof id === "string" && /^[0-9a-fA-F]{24}$/.test(id);
 }
 
-// Escapes special regex characters so search input is treated as plain text.
-export function escapeRegex(text) {
+(text) {
   return String(text).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
