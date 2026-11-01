@@ -1,4 +1,3 @@
-
 export const EVENT_TYPES = [
   "Cleanup",
   "Plantation",
@@ -40,7 +39,7 @@ export function isValidId(id) {
   return typeof id === "string" && /^[0-9a-fA-F]{24}$/.test(id);
 }
 
-(text) {
+export function escapeRegex(text) {
   return String(text).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
@@ -81,7 +80,7 @@ export function validateEvent(body) {
     errors.push("Event type is invalid.");
   }
 
- 
+
   const thumbnail = String(input.thumbnail ?? "").trim();
   data.thumbnail = thumbnail;
   if (!thumbnail) {
