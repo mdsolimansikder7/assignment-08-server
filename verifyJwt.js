@@ -40,6 +40,9 @@ export function notFound(req, res) {
 }
 
 export function errorHandler(err, req, res, next) {
+  if (err.type === "entity.parse.failed" || err instanceof SyntaxError) {
+    return res.status(400).json({ success: false, message: "Invalid JSON body." });
+  }
   console.error(err);
   res.status(500).json({ success: false, message: "Something went wrong on the server." });
 }
